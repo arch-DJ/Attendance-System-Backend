@@ -1,0 +1,22 @@
+{
+  "name": "attendance-system-backend",
+  "version": "1.0.0",
+  "description": "Automated Attendace System Backend RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arch-DJ/Attendance-System-Backend.git"
+  },
+  "author": "arch-DJ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arch-DJ/Attendance-System-Backend/issues"
+  },
+  "homepage": "https://github.com/arch-DJ/Attendance-System-Backend#readme",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
