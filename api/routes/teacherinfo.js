@@ -29,4 +29,42 @@ router.post("/", (req, res, next) => {
     });
 });
 
+router.get("/", (req, res, next) => {
+  Teacher.find()
+    .populate({
+     path: 'subjects',
+     populate: {
+       path: 'room',
+       model: 'Classroom'
+     }})
+    .exec()
+    .then(docs => {
+      res.status(200).json(docs);
+    })
+    .catch(err => {
+      res.status(500).json({
+        error: err
+      });
+    });
+});
+
+router.get("/:teacherId", (req, res, next) => {
+  Teacher.findById(req.params.teacherId)
+  .populate({
+   path: 'subjects',
+   populate: {
+     path: 'room',
+     model: 'Classroom'
+   }})
+  .exec()
+  .then(docs => {
+    res.status(200).json(docs);
+  })
+  .catch(err => {
+    res.status(500).json({
+      error: err
+    });
+  });
+});
+
 module.exports = router;
