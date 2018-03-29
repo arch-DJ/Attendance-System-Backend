@@ -9,7 +9,8 @@ router.post("/", (req, res, next) => {
     _id: new mongoose.Types.ObjectId(),
     class_name: req.body.class_name,
     height: req.body.height,
-    coordinates: req.body.coordinates
+    coordinates: req.body.coordinates,
+    z_coordinate: req.body.z_coordinate
   });
   classroom
     .save()

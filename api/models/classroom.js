@@ -7,7 +7,8 @@ const classroomSchema = mongoose.Schema({
       x : Number,
       y : Number
      }],
-    height:{"type": Number,"required":true},
+    z_coordinate:{"type": Number, "required":true},
+    height:{"type": Number,"required":true}
 });
 
 module.exports = mongoose.model('Classroom', classroomSchema);

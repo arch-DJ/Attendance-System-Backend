@@ -6,6 +6,7 @@ const subjectSchema = mongoose.Schema({
     sub_name: {"type": String,"required":true},
     semester:{"type": Number,"required":true},
     branch: {"type": String,"required":true},
+    total_classes: {"type": Number, "default":0},
     room: {"type":mongoose.Schema.Types.ObjectId, ref: 'Classroom', required: true}
 });
 
