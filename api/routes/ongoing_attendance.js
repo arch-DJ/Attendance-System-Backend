@@ -36,8 +36,8 @@ router.post("/", (req, res, next) => {
     });
 });
 
-router.delete("/", (req, res, next) => {
-  const id = req.body.id;
+router.delete("/:attendanceId", (req, res, next) => {
+  const id = req.params.attendanceId;
   OngoingAttendance.remove({ _id: id })
     .exec()
     .then(result => {
