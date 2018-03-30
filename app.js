@@ -15,6 +15,7 @@ const tempAttendanceRoute = require('./api/routes/tempattendance');
 const updateTotalClassRoute = require('./api/routes/update_total_class');
 const updateAttendanceRoute = require('./api/routes/update_attendance');
 const getStudentsRoute = require('./api/routes/getstudents');
+const apRoute = require('./api/routes/accesspoint');
 
 mongoose.connect("mongodb://archdj:10096@ds125469.mlab.com:25469/attendance-app");
 
@@ -34,7 +35,7 @@ app.use('/tempattendance', tempAttendanceRoute);
 app.use('/updatetotalclass', updateTotalClassRoute);
 app.use('/updateattendance', updateAttendanceRoute);
 app.use('/getstudents', getStudentsRoute);
-
+app.use('/accesspoint', apRoute);
 
 app.use((req, res, next) => {
     res.status(200).json({
