@@ -6,8 +6,7 @@ const Subject = require("../models/subject");
 
 router.patch("/:subjectId", (req, res, next) => {
   const id = req.params.subjectId;
-  const body = req.body;
-  Subject.update({ _id: id }, { $set: body })
+  Subject.update({ _id: id }, { $inc : { "total_classes" : 1 }})
     .exec()
     .then(result => {
       res.status(200).json(result);
