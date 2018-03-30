@@ -12,7 +12,7 @@ router.post("/", (req, res, next) => {
     sub_name: req.body.sub_name,
     semester: req.body.semester,
     branch: req.body.branch,
-    room: req.body.room_id
+    room: req.body.room
   });
   subject
     .save()

@@ -12,6 +12,9 @@ const teacherInfoRoute = require('./api/routes/teacherinfo');
 const studentInfoRoute = require('./api/routes/studentinfo');
 const ongoingAttendanceRoute = require('./api/routes/ongoing_attendance');
 const tempAttendanceRoute = require('./api/routes/tempattendance');
+const updateTotalClassRoute = require('./api/routes/update_total_class');
+const updateAttendanceRoute = require('./api/routes/update_attendance');
+const getStudentsRoute = require('./api/routes/getstudents');
 
 mongoose.connect("mongodb://archdj:10096@ds125469.mlab.com:25469/attendance-app");
 
@@ -28,6 +31,9 @@ app.use('/teacherinfo', teacherInfoRoute);
 app.use('/studentinfo', studentInfoRoute);
 app.use('/ongoingattendance', ongoingAttendanceRoute);
 app.use('/tempattendance', tempAttendanceRoute);
+app.use('/updatetotalclass', updateTotalClassRoute);
+app.use('/updateattendance', updateAttendanceRoute);
+app.use('/getstudents', getStudentsRoute);
 
 
 app.use((req, res, next) => {
