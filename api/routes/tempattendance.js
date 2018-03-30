@@ -24,8 +24,8 @@ router.post("/", (req, res, next) => {
     });
 });
 
-router.delete("/", (req, res, next) => {
-  const subject = req.body.subject;
+router.delete("/:subjectId", (req, res, next) => {
+  const subject = req.params.subjectId;
   TempAttendance.remove({ "subject": {'$in':subject} })
     .exec()
     .then(result => {
