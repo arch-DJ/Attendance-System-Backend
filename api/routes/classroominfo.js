@@ -7,10 +7,13 @@ const Classroom = require("../models/classroom");
 router.post("/", (req, res, next) => {
   const classroom = new Classroom({
     _id: new mongoose.Types.ObjectId(),
-    class_name: req.body.class_name,
-    height: req.body.height,
-    coordinates: req.body.coordinates,
-    z_coordinate: req.body.z_coordinate
+    class_name : req.body.class_name,
+    xmin: req.body.xmin,
+    xmax: req.body.xmax,
+    ymin: req.body.ymin,
+    ymax: req.body.ymax,
+    zmin: req.body.zmin,
+    zmax: req.body.zmax
   });
   classroom
     .save()
