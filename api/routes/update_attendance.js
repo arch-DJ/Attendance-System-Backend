@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const Student = require("../models/student");
 
-router.patch("/", (req, res, next) => {
+router.put("/", (req, res, next) => {
   const ids = req.body.ids;
   const subject = req.body.subject;
   Student.updateMany({"subjects.subject":subject, "_id":{ "$in": ids }},

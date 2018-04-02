@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 const Subject = require("../models/subject");
 
-router.patch("/:subjectId", (req, res, next) => {
+router.put("/:subjectId", (req, res, next) => {
   const id = req.params.subjectId;
   Subject.update({ _id: id }, { $inc : { "total_classes" : 1 }})
     .exec()
